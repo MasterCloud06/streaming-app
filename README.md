@@ -15,17 +15,30 @@ App para administrar la venta de cuentas de streaming **100 % en el iPhone, sin 
 - **Avisos** sin internet: el día que vence cada persona y un día antes de pagar cada cuenta.
 - **Respaldo** en JSON para guardar en iCloud Drive o enviarte por WhatsApp, y restaurarlo si cambias de teléfono.
 
-## Instalar en tu iPhone
+## Instalar en tu iPhone sin Mac (SideStore, gratis)
 
-Necesitas **una Mac con Xcode 16 o superior** (solo para instalarla; después la app no depende de la computadora).
+Cada cambio en `main` se compila solo en GitHub y se publica en [Releases](../../releases/latest) como `CuentasStreaming.ipa`.
 
-1. Clona o descarga este repositorio y abre `StreamingApp.xcodeproj`.
-2. En Xcode: selecciona el proyecto › target **StreamingApp** › *Signing & Capabilities* › en **Team** elige tu Apple ID (Xcode › Settings › Accounts para agregarlo).
-3. Si Xcode dice que el *Bundle Identifier* ya existe, cámbialo por algo único (ej. `com.tunombre.cuentasstreaming`).
-4. Conecta el iPhone por cable, elígelo arriba como destino y presiona ▶︎.
-5. En el iPhone: *Ajustes › Privacidad y seguridad › Modo de desarrollador* → activar (pide reiniciar). Luego *Ajustes › General › VPN y gestión de dispositivos* → confiar en tu Apple ID.
+**Una sola vez, con una PC Windows (64 bits) y cable USB:**
 
-**Duración de la instalación:** con un Apple ID gratuito la app deja de abrir a los 7 días y hay que volver a darle ▶︎ desde la Mac (tus datos no se borran). Con el Apple Developer Program (99 USD/año) dura un año.
+1. En el iPhone instala **LocalDevVPN** desde el App Store, ábrelo y toca *Connect* (acepta la configuración VPN).
+2. En la PC instala **iTunes** desde la web de Apple y **iloader** (`.msi`) desde https://github.com/nab138/iloader/releases.
+3. Conecta el iPhone por cable, confía en la PC, abre iloader, inicia sesión con tu Apple ID, elige el iPhone y toca **Install SideStore (Stable)**.
+4. En el iPhone: *Ajustes › Privacidad y seguridad › Modo de desarrollador* → activar (se reinicia). Luego *Ajustes › General › VPN y gestión de dispositivos* → tu Apple ID → *Confiar*.
+5. Con LocalDevVPN conectado, abre SideStore e inicia sesión con el mismo Apple ID.
+
+**Instalar la app (ya sin PC):**
+
+- En SideStore › *Sources* › **+** pega `https://github.com/MasterCloud06/streaming-app/releases/latest/download/source.json` e instala *Cuentas Streaming*.
+- O descarga `CuentasStreaming.ipa` desde Releases en Safari y en SideStore › *My Apps* › **+** elígelo desde Archivos.
+
+**Cada 7 días:** con LocalDevVPN conectado y Wi-Fi, abre SideStore › *My Apps* y toca el contador **7 DAYS** de SideStore y de Cuentas Streaming. Tus datos no se borran al refrescar. Con Apple ID gratuito puedes tener hasta 3 apps instaladas así (SideStore cuenta como una).
+
+> Respaldos: si la app llega a expirar, tus datos siguen ahí al reinstalarla con el mismo Apple ID, pero igual crea un respaldo desde *Más* de vez en cuando.
+
+### Con Mac (opcional)
+
+Abre `StreamingApp.xcodeproj` en Xcode 16+, elige tu Apple ID en *Signing & Capabilities*, conecta el iPhone y presiona ▶︎.
 
 ## Estructura
 
